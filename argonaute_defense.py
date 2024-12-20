@@ -55,7 +55,7 @@ class Player(pygame.sprite.Sprite):
         if self.rect.left < 0:
             self.rect.left = 0
 
-# Классы летающих элементов, из которых нужно собирать комплекс
+# Классы летающих элементов, из которых нужно собирать комплекс RISC
 class Dicer(pygame.sprite.Sprite):
     def __init__(self):
         super().__init__()
@@ -133,7 +133,7 @@ agos2 = pygame.sprite.Group()
 ago2 = Ago2()
 agos2.add(ago2)
 
-# Контроль столкновений для сборки комплекса RISC
+# Контроль столкновений игрока и объектов для сборки комплекса RISC
 def handle_collisions(player, all_sprites):
     global score
 
