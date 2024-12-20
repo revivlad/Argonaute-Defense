@@ -164,7 +164,7 @@ def handle_collisions(player, all_sprites):
             
      for sprite in all_sprites:
          if pygame.sprite.collide_rect(player, sprite):
-             if isinstance(sprite, Rna) and player.image = image_rdta
+             if isinstance(sprite, Rna) and player.image == image_rdta:
                 player.image = image_fullrisc
             all_sprites.update()
                 score -= 50  # Уменьшаем счет на 50
