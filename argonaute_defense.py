@@ -5,7 +5,7 @@ from sys import exit
 
 # Инициализация pygame
 pygame.init()
-pygame.time.set_timer(pygame.USEREVENT, 7)
+pygame.time.set_timer(pygame.USEREVENT, 1000)
 
 # Создание игрового поля
 screen = pygame.display.set_mode((1200, 675))
@@ -148,12 +148,25 @@ def handle_collisions(player, all_sprites):
         if pygame.sprite.collide_rect(player, sprite):
             if isinstance(sprite, Dicer):
                 player.image = image_rd
-            elif isinstance(sprite, Trbp) and player.image == image_rd:
+            all_sprites.update()
+            
+    for sprite in all_sprites:
+        if pygame.sprite.collide_rect(player, sprite):
+            if isinstance(sprite, Trbp) and player.image == image_rd:
                 player.image = image_rdt
-            elif player.image == image_rdt and isinstance(sprite, Ago2):
+            all_sprites.update()
+
+     for sprite in all_sprites:
+        if pygame.sprite.collide_rect(player, sprite):
+            if isinstance(sprite, Ago2) and player.image == image_rdt:
                 player.image = image_rdta
-            elif player.image == image_rdta and isinstance(sprite, Rna):
+            all_sprites.update()
+            
+     for sprite in all_sprites:
+         if pygame.sprite.collide_rect(player, sprite):
+             if isinstance(sprite, Rna) and player.image = image_rdta
                 player.image = image_fullrisc
+            all_sprites.update()
                 score -= 50  # Уменьшаем счет на 50
                 player.image = image_rlc  # Возвращаем к начальному изображению
 
