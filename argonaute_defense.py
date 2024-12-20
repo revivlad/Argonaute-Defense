@@ -219,6 +219,8 @@ while True:
             new_trbp = Trbp()
             new_dicer = Dicer()
             all_sprites.add(new_rna,new_ago2,new_trbp,new_dicer)
+            if score > 50:
+                game_over = True
 
     # Обновление состояния всех спрайтов
     all_sprites.update()
