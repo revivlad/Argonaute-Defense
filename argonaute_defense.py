@@ -26,7 +26,6 @@ name = font.render('Argonaute Defense', False, 'Black')
 # Класс игрока (белка RLC)
 class Player(pygame.sprite.Sprite):
     def __init__(self):
-        pygame.time.set_timer(pygame.USEREVENT, 1000)
         super().__init__()
         self.image = pygame.image.load('rlc.png').convert_alpha()
         self.rect = self.image.get_rect(midbottom=(130, 580))
@@ -134,7 +133,7 @@ agos2 = pygame.sprite.Group()
 ago2 = Ago2()
 agos2.add(ago2)
 
-# Контроль столкновенйи для сборки комплекса RISC
+# Контроль столкновений для сборки комплекса RISC
 def handle_collisions(player, all_sprites):
     global score
 
